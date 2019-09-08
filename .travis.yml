@@ -6,13 +6,13 @@ matrix:
     - language: csharp
       mono: none
       dotnet: 2.2.401
-      before_install: cd bexpr.cs.lang
+      before_install: cd src
       solution: BExpr.sln
       install: dotnet restore BExpr.sln
       script: 
         - dotnet build BExpr.sln /p:Configuration=Release /p:Version=${PACKAGE_VERSION}-pre-$TRAVIS_BUILD_NUMBER /p:AssemblyVersion=${PACKAGE_VERSION}.$TRAVIS_BUILD_NUMBER
       after_script:
-        - 
+        - dotnet test
       after_success:
-        - test $TRAVIS_BRANCH = "master" && dotnet nuget push bin/Release/BExpr.Core.Lang.${PACKAGE_VERSION}-pre-${TRAVIS_BUILD_NUMBER}.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+        - test $TRAVIS_BRANCH = "master" && dotnet nuget push bin/Release/BExpr.${PACKAGE_VERSION}-pre-${TRAVIS_BUILD_NUMBER}.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
         
