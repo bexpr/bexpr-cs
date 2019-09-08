@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>BExpr</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Brian Flynn</Authors>
+    <Product>BExpr</Product>
+    <Description>C# Expression Library</Description>
+    <Copyright>Brian Flynn</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/bexpr/bexpr-cs</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bexpr/bexpr-cs</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Expression Language</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BExpr.Core.Lang" Version="0.1.0-pre-9" />
+  </ItemGroup>
+</Project>
